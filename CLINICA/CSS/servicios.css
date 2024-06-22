@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI';
+}
+
+::selection {
+  color: #000;
+  background: #fff;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  overflow: auto;
+}
+
+nav {
+  position: fixed;
+  background: #5FF7FE;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 12;
+}
+
+nav .menu {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.menu .logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.menu ul {
+  display: inline-flex;
+}
+
+.menu ul li {
+  list-style: none;
+  margin-left: 7px;
+}
+
+.menu ul li:first-child {
+  margin-left: 0px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.burger {
+  display: none;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px 20px; /* Add padding top to ensure content doesn't overlap with navbar */
+  background-color: #f9f9f9;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+  flex: 1 1 300px; /* Ensures all cards have the same width */
+}
+
+.card img {
+  width: 100%;
+  height: 200px; /* Sets a fixed height for images */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card span {
+  font-size: 14px;
+  color: #999;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media screen and (max-width: 768px) {
+  .menu ul {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #5FF7FE;
+    padding: 10px;
+    z-index: 11;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links.active li {
+    margin: 10px 0;
+  }
+}
+
+footer {
+  background-color: #E1E2E2;
+  color: #000;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-info, .useful-links, .newsletter {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.contact-info h3, .useful-links h3, .newsletter h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-info p, .useful-links ul, .newsletter form {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.useful-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.useful-links ul li {
+  margin-bottom: 5px;
+}
+
+.useful-links ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.useful-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.newsletter form {
+  display: flex;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.newsletter button {
+  padding: 10px;
+  border: none;
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #e55e5e;
+}
+
+.social-media {
+  background-color: #BCBEBE;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.social-media a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.social-media a:hover {
+  color: #ccc;
+}

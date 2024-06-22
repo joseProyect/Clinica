@@ -1,0 +1,85 @@
+/* Estilo del cuerpo y fondo de página */
+body {
+  background-color: #5FF7FE;
+  color: #000; 
+}
+
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  background-color: #5FF7FE; 
+}
+
+.menu li {
+  margin-right: 30px;
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #000; 
+  text-decoration: none;
+  transition: all 0.45s;
+  padding: 10px; 
+}
+
+.menu li a i {
+  margin-right: 10px;
+}
+
+.menu li:hover a {
+  color: #d94f5c; 
+}
+
+
+@media (max-width: 768px) {
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%; 
+  }
+
+  .menu li a {
+    font-size: 0; 
+  }
+
+  .menu li a i {
+    font-size: 24px; 
+  }
+}
+
+
+@media (min-width: 769px) {
+  .menu li a {
+    font-size: 18px; 
+  }
+
+  .menu li a i {
+    margin-right: 10px; 
+  }
+}
+
+
+.social-media {
+  background-color: #5FF7FE;
+  color: #5FF7FE;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.social-media a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.social-media a:hover {
+  color: #ccc;
+}
+

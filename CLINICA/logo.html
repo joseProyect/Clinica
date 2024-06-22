@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/logo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Formulario de Inicio de Sesión y Registro</title>
+</head>
+
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="servicios.html"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+      <li><a href="contactos.html"><i class="fas fa-envelope"></i> Contactanos</a></li>
+      <li><a href="ubicanos.html"><i class="fas fa-map-marker-alt"></i> Ubicacion</a></li>
+    </ul>
+  </nav>
+
+  <div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 to-blue-400">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+      <h2 class="text-2xl font-bold text-center mb-6">Formulario de Inicio de Sesión</h2>
+      <div class="flex justify-center mb-6">
+        <button id="login-tab" class="bg-blue-500 text-white px-4 py-2 rounded-l-lg focus:outline-none">Iniciar Sesión</button>
+        <button id="signup-tab" class="bg-zinc-200 text-zinc-700 px-4 py-2 rounded-r-lg focus:outline-none">Registrarse</button>
+      </div>
+      <form id="login-form" action="login.php" method="POST">
+        <div class="mb-4">
+          <input type="email" name="email" placeholder="Correo Electrónico" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div class="mb-4">
+          <input type="password" name="password" placeholder="Contraseña" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white px-3 py-2 rounded-lg">Iniciar Sesión</button>
+      </form>
+
+      <form id="signup-form" action="signup.php" method="POST" class="hidden">
+        <div class="mb-4">
+          <input type="text" name="nombre" placeholder="Nombre Completo" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div class="mb-4">
+          <input type="text" name="telefono" placeholder="Teléfono" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div class="mb-4">
+          <input type="email" name="email" placeholder="Correo Electrónico" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <div class="mb-4">
+          <input type="password" name="password" placeholder="Contraseña" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white px-3 py-2 rounded-lg">Registrarse</button>
+      </form>
+
+      <div class="text-center mt-4">
+        <p>¿No tienes una cuenta? <a href="#" id="signup-link" class="text-blue-500">Regístrate ahora</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para obtener parámetros de la URL
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Función para mostrar mensajes de error o éxito
+    function mostrarMensaje() {
+        var error = getParameterByName('error');
+        var success = getParameterByName('success');
+        
+        if (error) {
+            alert(error); // Mostrar mensaje de error
+        }
+        if (success) {
+            alert(success); // Mostrar mensaje de éxito
+        }
+    }
+
+    // Mostrar mensajes al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+        mostrarMensaje();
+    });
+
+    // Cambiar entre formularios (login y signup)
+    const loginTab = document.getElementById('login-tab');
+    const signupTab = document.getElementById('signup-tab');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const signupLink = document.getElementById('signup-link');
+
+    loginTab.addEventListener('click', () => {
+      loginForm.classList.remove('hidden');
+      signupForm.classList.add('hidden');
+      loginTab.classList.add('bg-blue-500', 'text-white');
+      loginTab.classList.remove('bg-zinc-200', 'text-zinc-700');
+      signupTab.classList.add('bg-zinc-200', 'text-zinc-700');
+      signupTab.classList.remove('bg-blue-500', 'text-white');
+    });
+
+    signupTab.addEventListener('click', () => {
+      loginForm.classList.add('hidden');
+      signupForm.classList.remove('hidden');
+      signupTab.classList.add('bg-blue-500', 'text-white');
+      signupTab.classList.remove('bg-zinc-200', 'text-zinc-700');
+      loginTab.classList.add('bg-zinc-200', 'text-zinc-700');
+      loginTab.classList.remove('bg-blue-500', 'text-white');
+    });
+
+    signupLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      signupTab.click();
+    });
+
+    // Función para limpiar los campos de formulario
+    function limpiarCampos(formId) {
+      document.getElementById(formId).reset();
+    }
+
+    // Limpia los campos de ambos formularios al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+      limpiarCampos("login-form");
+      limpiarCampos("signup-form");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 30px;
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #777;
+  text-decoration: none;
+  transition: all 0.45s;
+  padding: 10px; /* Espacio interno para hacer clic */
+}
+
+.menu li a i {
+  margin-right: 10px;
+}
+
+.menu li:hover a {
+  color: #d94f5c;
+}
+
+@media (max-width: 768px) {
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .menu li a {
+    font-size: 0; /* Oculta el texto */
+  }
+
+  .menu li a i {
+    font-size: 24px; /* Tamaño del icono */
+  }
+}

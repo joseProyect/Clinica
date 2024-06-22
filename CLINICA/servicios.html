@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinica</title>
+  <link rel="stylesheet" href="./CSS/servicios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#"><img src="./IMG/logoo.png" alt="Logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="servicios.html">SERVICIOS</a></li>
+        <li><a href="contactos.html">CONTACTANOS</a></li>
+        <li><a href="ubicanos.html">UBICANOS</a></li>
+        <li><a href="logo.html">RESERVAR CITA</a></li>
+      </ul>
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="content">
+    <div class="card">
+      <img src="./IMG/periodoncia.jpg" alt="Periodoncia">
+      <span>SERVICIOS DE</span>
+      <h2>PERIODONCIA</h2>
+      <p>La periodoncia es el área de la odontología que protege y fortalece los tejidos vitales que rodean tus prestigiosos dientes. Nuestros tratamientos periodontales modernos utilizan innovadoras técnicas y materiales para mantener tus dientes brillando por más tiempo y en su mejor estado.</p>
+    </div>
+
+    <div class="card">
+      <img src="./IMG/endodoncia.png" alt="Endodoncia">
+      <span>SERVICIOS DE</span>
+      <h2>ENDODONCIA</h2>
+      <p>Desde caries profundas hasta traumatismos y restauraciones descuidadas, esta disciplina enfrenta desafíos comunes que pueden provocar daño irreversible en tus preciados dientes y causar dolores dentales severos.</p>
+    </div>
+
+    <div class="card">
+      <img src="./IMG/rehabilitacion.jpeg" alt="Rehabilitación Oral">
+      <span>SERVICIOS DE</span>
+      <h2>REHABILITACION ORAL</h2>
+      <p>La Rehabilitación Oral aborda diversos problemas dentales, como dientes dañados, pérdida de piezas dentales y maloclusiones, utilizando una combinación de procedimientos como implantes dentales, carillas, prótesis dentales y ortodoncia.</p>
+    </div>
+
+    <div class="card">
+      <img src="./IMG/implante.jpg" alt="Implantología">
+      <span>SERVICIOS DE </span>
+      <h2>IMPLANTOLOGIA</h2>
+      <p>Estos implantes son estructuras de titanio que se integran de forma segura con el hueso maxilar o mandibular, proporcionando una base sólida para restauraciones dentales como coronas, puentes o prótesis.</p>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="contact-info">
+        <h3>Contacto</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Av. Javier Prado Este 1066, Urb. Corpac - 15036 Perú</p>
+        <p><i class="fas fa-envelope"></i> webmaster@crp.com.pe</p>
+        <p><i class="fas fa-phone"></i> (511) 224-2224 / (511) 224-2226</p>
+      </div>
+      <div class="useful-links">
+        <h3>Enlaces útiles</h3>
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="nosotros.html">SERVICIOS</a></li>
+          <li><a href="servicios.php">CONTACTANOS</a></li>
+          <li><a href="logo.html">UBICANOS</a></li>
+          <li><a href="contactos.php">RESERVAR CITA</a></li>
+        </ul>
+      </div>
+        </div>
+		<div class="social-media">
+		  <a href="https://www.facebook.com/pages/Doctor-Odontologo/333338453456598"><i class="fab fa-facebook-f"></i></a>
+		  <a href="https://wa.me/947363124"><i class="fab fa-whatsapp"></i></a>
+		  <a href="mailto:clinica.sonrisas@gmail.com "><i class="fas fa-envelope"></i></a>
+		  <a href="https://www.instagram.com/clinica_sonrisas_unidas/"><i class="fab fa-instagram"></i></a>
+		</div>
+
+		
+	<a href="https://wa.me/928035363" class="whatsapp-float" target="_blank">
+	<i class="fab fa-whatsapp"></i>
+	</a>
+
+<style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+
+    .whatsapp-float i {
+      font-size: 30px;
+    }
+  </style>
+  </footer>
+  <script>
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
